@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Person Pet</title>
+</head>
+<body>
+<div th:each="person : ${owners}">
+    <h2 th:text="${person.name}"></h2>
+    <ul>
+        <th:block th:each="pet:${actor.pets}">
+            <li th:inline="text"><b>[[${pet.name}]]</b>
+                is a [[${pet.breed}]], and is [[${pet.age]] years old.</li>
+        </th:block>
+    </ul>
+</div>
+</body>
+</html>
